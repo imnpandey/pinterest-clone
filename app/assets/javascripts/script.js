@@ -12,6 +12,7 @@
         return;
     }
     $("#disp").slideDown(500);
+    $(".prev_img img").css("padding", "0px");
     var oImage = document.getElementById('preview');
 
     var oReader = new FileReader();
@@ -30,7 +31,7 @@
     oReader.readAsDataURL(oFile);
   }
 
-$(function(){
+$(document).ready(function(){
   var $container = $('.main_container');
   $container.imagesLoaded( function(){
     $container.masonry({

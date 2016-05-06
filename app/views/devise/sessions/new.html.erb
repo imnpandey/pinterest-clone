@@ -1,26 +1,68 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<h1 id="login_logo"><a href="/"></a></h1>
+  <div class="social_buttons">
+    <div class="inset">
+      <%= link_to "#", class: "fb login_button" do %>
+        <div class="logo_wrapper"><span class="logomin"></span></div>
+        <span>Login with Facebook</span>
+      <% end %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="inset">
+       <%= link_to user_twitter_omniauth_authorize_path, class: "tw login_button" do %>
+        <div class="logo_wrapper"><span class="logomin"></span></div>
+        <span>Login with Twitter</span>
+       <% end %>
+    </div>
   </div>
-<% end %>
+
+    <%= image_tag("login_bar.png", class: "login_bar") %>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'Form FancyForm AuthForm'}) do |f| %>
+      <ul class="ControlGroups">
+      <li>
+        <% if alert %>
+          <%= alert %>
+        <% end %>
+      </li>
+      <li>
+        <%= f.email_field :email, id: "id_email", autofocus: true %>
+        <%= f.label :email %>
+        <span class="fff"></span>
+      </li>
+      <li>
+        <%= f.password_field :password, id: "id_password", autocomplete: "off" %>
+        <%= f.label :password %>
+        <span class="fff"></span>
+      </li>
+        <% if devise_mapping.rememberable? -%>
+        <li>
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, id: "remember_me" %>
+        </li>
+        <% end -%>
+      </ul>
+
+    <div class="non_inputs">
+      <%= f.submit "Log in", class: "Button WhiteButton Button18" %>
+      <a id="resetPassword" class="colorless" href="javascript:;">Forgot your password?</a>
+    </div>
+
+  <% end %>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name),
+                         html: { method: :post, :class => 'Form FancyForm AuthForm ResetForm'}) do |f| %>
+    <%= devise_error_messages! %>
+      <ul class="ControlGroups">
+        <li>
+              <%= f.email_field :email, id: "id_email_2", autofocus: true %>
+              <%= f.label :email %>
+             <span class="fff"></span>
+        </li>
+      </ul>
+
+      <div class="non_inputs">
+        <%= f.submit "Reset Password", class: "Button WhiteButton Button18" %>
+        <a id="backToLogin" class="colorless" href="javascript:;">Back to Login?</a>
+      </div>
+  <% end %>
 
 <%= render "devise/shared/links" %>

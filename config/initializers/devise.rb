@@ -1,3 +1,10 @@
+Rails.application.config.to_prepare do
+  Devise::SessionsController.layout "login"
+  Devise::RegistrationsController.layout "login"
+  Devise::ConfirmationsController.layout "devise"
+  Devise::UnlocksController.layout "devise"
+  Devise::PasswordsController.layout "login"
+end
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
