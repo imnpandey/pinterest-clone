@@ -12,7 +12,9 @@
       </form>
         <ul class="nav">
           <% if user_signed_in? %>
-            <li><a href="#add_form" id="add_pop">Add +</a></li>
+            <li>
+            <!-- <a href="#add_form" id="add_pop">Add +</a> -->
+            <%= link_to "Add +", new_pin_path, id: "add_pop" %></li>
             <li id="UserNav">
                 <%= link_to "#", class: "nava" do %>
                     <%= gravatar(current_user) %>

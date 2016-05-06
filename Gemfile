@@ -17,6 +17,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
+#image upload
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+
 group :development do
   gem 'quiet_assets'
   gem "better_errors"

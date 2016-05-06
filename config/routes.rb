@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   match '/users/:id/finish_signup' => 'users#finish_signup',
           via: [:get, :patch], :as => :finish_signup
 
-  root to: "homes#index"
+  root to: "pins#index"
+  resource :pin, only: [:new, :create]
 end

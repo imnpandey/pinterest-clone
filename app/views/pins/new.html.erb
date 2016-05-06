@@ -1,0 +1,27 @@
+<div class="popup" style="visibility: visible">
+  <div class="header">
+      <a class="close" href="#close">x</a>
+      <h2>Upload a Pin</h2>
+  </div>
+  <form id="upload_form">
+    <ul class="ctrl_grp">
+      <li>
+        <input type="file" name="image_file" id="image_file" onchange="fileSelecter()">
+        <div class="error"></div>
+      </li><br>
+        <div id="disp" style="display:none;">
+          <li>
+            <div class="prev_img">
+            <img src="css/images/loading.gif" id="preview"></div>
+            <div class="description">
+            <textarea id="desp" rows="3" cols="20" name="desp"></textarea>
+            <label id="lab">Description of post..</label>
+            <span class="fff"></span>
+            </div>
+          </li>
+          <button class="submit_button RedButton" id="sub_post" type="submit">Submit Post</button>
+      </div>
+    </ul>
+  </form>
+  <div id="upload_result"></div>
+</div>
