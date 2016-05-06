@@ -3,37 +3,12 @@
   <div class="header_panel">
 
       <!-- logo -->
-      <a href="index.php" class="logo"></a>
-
+      <%= link_to "", root_path, class: "logo" %>
       <!-- search form -->
       <form action="" method="get" class="search">
           <input autocomplete="off" name="q" size="27" placeholder="Search" type="text">
           <input name="search" value="search" type="submit">
       </form>
-        <ul class="nav">
-          <% if user_signed_in? %>
-            <li>
-            <!-- <a href="#add_form" id="add_pop">Add +</a> -->
-            <%= link_to "Add +", new_pin_path, id: "add_pop" %></li>
-            <li id="UserNav">
-                <%= link_to "#", class: "nava" do %>
-                    <%= gravatar(current_user) %>
-                    <%= current_user.username %>
-                <% end %>
-               <ul>
-                  <li><a href="#">Invite Friends</a></li>
-                  <li><a href="#">Find Friends</a></li>
-                  <li class="div"><a href="#">Boards</a></li>
-                  <li><a href="#">Pins</a></li>
-                  <li><a href="#">Likes</a></li>
-                  <li class="div"><a href="#">Settings</a></li>
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-          <% else %>
-            <li><%= link_to "Join", new_user_registration_path, id: "join_pop" %></li>
-            <li><%= link_to "Login", new_user_session_path, id: "login_pop" %></li>
-          <% end %>
-        </ul>
+        <%= render "layouts/nav" %>
   </div>
 </div>

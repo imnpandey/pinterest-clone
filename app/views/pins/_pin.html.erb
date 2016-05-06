@@ -1,0 +1,25 @@
+<div class="pin">
+  <div class="actions">
+      <a href="javascript:;" class="button likebutton">Like</a>
+      <a href="javascript:;" class="button comment_tr">Comment</a>
+  </div>
+  <div class="holder">
+    <%= link_to (image_tag pin.image.url(:thumb)), pin, class: "image" %>
+  </div>
+  <div class="padd">
+    <p class="desc"><%= pin.description %></p>
+    <p class="info">
+        <span class="LikesCount"><strong>0</strong> likes</span>
+        <span class="CommentsCount">0 comments</span>
+    </p>
+  </div>
+  <div class="comment">
+    <div class="comment_user">
+     <%= gravatar(pin.user) %>
+    </div>
+    <div class="commentbody">
+      <a href="profile.php?id=4"><b><%= pin.user.username %></b></a>
+      <br><%= link_to(time_ago_in_words(pin.created_at), @pin) %> ago
+    </div>
+  </div>
+</div>

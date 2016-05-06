@@ -1,0 +1,21 @@
+<div class="big_container">
+  <div class="bigpin">
+    <div class="header">
+      <div class="owner">
+        <%= link_to "#", class: "owner_img" do %>
+          <%= gravatar(@pin.user) %>
+        <% end %>
+        <p class="owner_name">
+          <%= @pin.user.username %>
+        </p>
+        <p class="owner_when">
+          <%= link_to(time_ago_in_words(@pin.created_at), @pin) %>
+        </p>
+      </div>
+    </div>
+    <div class="holder">
+        <%= image_tag @pin.image.url(:large), class: "image" %>
+    </div>
+    <p class="desc"><%= @pin.description %></p>
+  </div>
+</div>
