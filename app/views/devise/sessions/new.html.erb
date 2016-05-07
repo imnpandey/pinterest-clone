@@ -1,4 +1,4 @@
-<h1 id="login_logo"><a href="/"></a></h1>
+<h1 id="login_logo"><%= link_to("", root_path) %></h1>
   <div class="social_buttons">
     <div class="inset">
       <%= link_to "#", class: "fb login_button" do %>
@@ -15,8 +15,9 @@
   </div>
 
     <%= image_tag("login_bar.png", class: "login_bar") %>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'Form FancyForm AuthForm'}) do |f| %>
+<div id="login_form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                         :html => {:class => 'Form FancyForm AuthForm'}) do |f| %>
       <ul class="ControlGroups">
       <li>
         <% if alert %>
@@ -47,7 +48,8 @@
     </div>
 
   <% end %>
-
+</div>
+<div id = "reset_password" style="display:none;">
   <%= form_for(resource, as: resource_name, url: password_path(resource_name),
                          html: { method: :post, :class => 'Form FancyForm AuthForm ResetForm'}) do |f| %>
     <%= devise_error_messages! %>
@@ -64,5 +66,11 @@
         <a id="backToLogin" class="colorless" href="javascript:;">Back to Login?</a>
       </div>
   <% end %>
+</div>
+<div class="footer">
+  <h3 class="login">
+    <span>Don't have an account? </span>
+    <a href="/users/sign_up">Sign up.</a>
+  </h3>
+</div>
 
-<%= render "devise/shared/links" %>

@@ -1,5 +1,5 @@
   function fileSelecter(){
-    var oFile = $('#image_file')[0].files[0];
+    var oFile = $('#file')[0].files[0];
     $('.error').hide();
 
     var rFilter = /^(image\/jpeg|image\/png)$/i;
@@ -31,6 +31,7 @@
     oReader.readAsDataURL(oFile);
   }
 
+
 $(document).ready(function(){
   var $container = $('.main_container');
   $container.imagesLoaded( function(){
@@ -42,6 +43,27 @@ $(document).ready(function(){
     });
   });
 
+   $('#resetPassword').click(function () {
+    $('#login_form').slideUp();
+    $('#reset_password').slideDown();
+  });
+
+  $('#backToLogin').click(function () {
+    $('#reset_password').slideUp();
+    $('#login_form').slideDown();
+  });
+
+ $('#signUp').click(function () {
+    $('#signup_form').slideDown();
+    $('#social_signup').slideUp();
+  });
+
+  $('#socailSignup').click(function () {
+    $('#social_signup').slideDown();
+    $('#signup_form').slideUp();
+  });
+
+
     // onclick event handler (for comments)
     $('.comment_tr').click(function () {
         $(this).toggleClass('disabled');
@@ -50,4 +72,36 @@ $(document).ready(function(){
         });
     });
 
+    $( ".inputfile" ).change(function(e) {
+        fileName = e.target.value.split( '\\' ).pop();
+        if( fileName )
+          $('#file_label>span').text(fileName);
+        else
+          $('#file_label>span').text("Choose an image..");
+      });
 });
+
+(function ( document, window, index )
+{
+  var inputs = document.querySelectorAll( '.inputfile' );
+  Array.prototype.forEach.call( inputs, function( input )
+  {
+    var label  = input.nextElementSibling,
+      labelVal = label.innerHTML;
+
+    input.addEventListener( 'change', function( e )
+    {
+      alert("change");
+        fileName = e.target.value.split( '\\' ).pop();
+
+      if( fileName )
+        label.querySelector( 'span' ).innerHTML = fileName;
+      else
+        label.innerHTML = labelVal;
+    });
+
+    // Firefox bug fix
+    input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+    input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+  });
+}( document, window, 0 ));

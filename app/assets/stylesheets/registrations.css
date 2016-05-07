@@ -1207,7 +1207,6 @@ li {
     font-weight: normal;
     font-size: 18px;
     padding-top: 35px;
-    background: url("rule_589x4.png") 50% 0% no-repeat;
 }
 
 #SignUp h3.login {
@@ -1320,16 +1319,23 @@ li {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-#SignUp .footer {
+.footer {
+    font-family: 'helvetica neue', arial, sans-serif;
+    font-size: 14px;
+    color: rgb(33, 25, 34);
     margin-top: 30px;
     padding: 30px 0px;
     text-align: center;
-    background: url("rule_589x4.png") 50% 0% no-repeat;
 }
 
-#SignUp .footer a {
+.footer a {
     color: rgb(204, 32, 39);
     display: inline-block;
-    font-size: 11px;
+}
+
+.footer h3 {
+    color: rgb(136, 136, 136);
+    font-family: serif;
     font-weight: normal;
 }
+

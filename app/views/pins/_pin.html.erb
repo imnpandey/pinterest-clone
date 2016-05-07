@@ -1,9 +1,11 @@
 <div class="pin" pin_id="<%= pin.id %>">
   <div class="holder">
+  <% if user_signed_in? %>
     <div class="actions">
         <a href="javascript:;" class="button likebutton">Like</a>
         <a href="javascript:;" class="button comment_tr">Comment</a>
     </div>
+  <% end %>
     <%= link_to (image_tag pin.image.url(:thumb)), pin, class: "image" %>
   </div>
   <div class="padd">
@@ -18,13 +20,15 @@
      <%= gravatar(pin.user) %>
     </div>
     <div class="commentbody">
-      <a href="profile.php?id=4"><b><%= pin.user.username %></b></a>
+      <a href="profile.php?id=4"><b><%=  pin.user.username %></b></a>
       <br><%= link_to(time_ago_in_words(pin.created_at), pin) %> ago
     </div>
   </div>
   <%= render pin.comments.last(2).reverse %>
-  <%= form_for([pin, pin.comments.build], html: { class: "comment", style: "display:none" }) do |f| %>
-    <%= f.text_area :content, placeholder: "Add a comment.." %>
-    <%= f.submit class: 'button postbutton', value: 'Comment' %>
+  <% if user_signed_in? %>
+    <%= form_for([pin, pin.comments.build], html: { class: "comment", style: "display:none" }) do |f| %>
+      <%= f.text_area :content, placeholder: "Add a comment.." %>
+      <%= f.submit class: 'button postbutton', value: 'Comment' %>
+    <% end %>
   <% end %>
 </div>
