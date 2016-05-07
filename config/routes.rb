@@ -4,5 +4,7 @@ Rails.application.routes.draw do
           via: [:get, :patch], :as => :finish_signup
 
   root to: "pins#index"
-  resources :pins, only: [:index, :new, :create, :show]
+  resources :pins, only: [:index, :new, :create, :show] do
+    resources :comments, only: [:show, :create]
+  end
 end

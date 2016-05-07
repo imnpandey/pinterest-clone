@@ -45,7 +45,7 @@ $(document).ready(function(){
     // onclick event handler (for comments)
     $('.comment_tr').click(function () {
         $(this).toggleClass('disabled');
-        $(this).parent().parent().find('form.comment').slideToggle(400, function () {
+        $(this).parent().parent().parent().find('form.comment').slideToggle(400, function () {
             $('.main_container').masonry();
         });
     });

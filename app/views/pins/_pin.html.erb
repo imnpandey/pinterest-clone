@@ -1,16 +1,16 @@
 <div class="pin" pin_id="<%= pin.id %>">
-  <div class="actions">
-      <a href="javascript:;" class="button likebutton">Like</a>
-      <a href="javascript:;" class="button comment_tr">Comment</a>
-  </div>
   <div class="holder">
+    <div class="actions">
+        <a href="javascript:;" class="button likebutton">Like</a>
+        <a href="javascript:;" class="button comment_tr">Comment</a>
+    </div>
     <%= link_to (image_tag pin.image.url(:thumb)), pin, class: "image" %>
   </div>
   <div class="padd">
     <p class="desc"><%= pin.description %></p>
     <p class="info">
         <span class="LikesCount"><strong>0</strong> likes</span>
-        <span class="CommentsCount">0 comments</span>
+        <span class="CommentsCount"><%= pluralize(pin.comments.count, "comment") %></span>
     </p>
   </div>
   <div class="comment">
@@ -19,11 +19,12 @@
     </div>
     <div class="commentbody">
       <a href="profile.php?id=4"><b><%= pin.user.username %></b></a>
-      <br><%= link_to(time_ago_in_words(pin.created_at), @pin) %> ago
+      <br><%= link_to(time_ago_in_words(pin.created_at), pin) %> ago
     </div>
   </div>
-  <form class="comment" id="commentform22" method="post" action="" style="display:none;">
-        <textarea placeholder="Add a comment..." id="ctextarea22" maxlength="255" name="comment"></textarea>
-        <input type="submit" id="22" class="button postbutton" value="Comment">
-    </form>
+  <%= render pin.comments.last(2).reverse %>
+  <%= form_for([pin, pin.comments.build], html: { class: "comment", style: "display:none" }) do |f| %>
+    <%= f.text_area :content, placeholder: "Add a comment.." %>
+    <%= f.submit class: 'button postbutton', value: 'Comment' %>
+  <% end %>
 </div>

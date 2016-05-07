@@ -17,5 +17,7 @@
         <%= image_tag @pin.image.url(:large), class: "image" %>
     </div>
     <p class="desc"><%= @pin.description %></p>
+    <%= render @pin.comments %>
+    <%= render "comments/form" %>
   </div>
 </div>

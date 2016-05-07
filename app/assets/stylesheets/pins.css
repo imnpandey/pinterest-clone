@@ -671,7 +671,6 @@ li {
 }
 
 .bigpin .comments {
-    margin: 20px 0;
     overflow: hidden;
     width: 99%;
 }
@@ -684,20 +683,16 @@ li {
     word-wrap: break-word;
 }
 
-.bigpin .comment {
-    background-color: transparent;
-    border-top: medium none;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
+.comment textarea:focus {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px rgba(34, 29, 29, 0.1) inset;
 }
 
 .bigpin .comment textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 96%;
+    width: 95%;
 }
 
+`
 .pname {
     font-size: 24px;
     margin-bottom: 10px;

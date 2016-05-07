@@ -1,0 +1,12 @@
+<div class="comments">
+  <div class="comment comment_area">
+    <div class="comment_user">
+     <%= gravatar(comment.user) %>
+    </div>
+    <div class="commentbody">
+      <b><%= comment.user.username %></b>
+        &nbsp; <%= time_ago_in_words(comment.created_at) %> ago<br>
+        <%= comment.content %>
+    </div>
+  </div>
+</div>

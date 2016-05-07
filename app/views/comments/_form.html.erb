@@ -1,0 +1,13 @@
+<div class="comments">
+  <div class="comment comment_area">
+    <div class="comment_user">
+     <%= gravatar(current_user) %>
+    </div>
+    <div class="commentbody">
+      <%= form_for([@pin, @pin.comments.build], html: { class: "comment"}) do |f| %>
+        <%= f.text_area :content, placeholder: "Add a comment.." %>
+        <%= f.submit class: 'button postbutton', value: 'Comment' %>
+      <% end %>
+    </div>
+  </div>
+</div>
