@@ -1,4 +1,4 @@
-<div class="pin">
+<div class="pin" pin_id="<%= pin.id %>">
   <div class="actions">
       <a href="javascript:;" class="button likebutton">Like</a>
       <a href="javascript:;" class="button comment_tr">Comment</a>
@@ -22,4 +22,8 @@
       <br><%= link_to(time_ago_in_words(pin.created_at), @pin) %> ago
     </div>
   </div>
+  <form class="comment" id="commentform22" method="post" action="" style="display:none;">
+        <textarea placeholder="Add a comment..." id="ctextarea22" maxlength="255" name="comment"></textarea>
+        <input type="submit" id="22" class="button postbutton" value="Comment">
+    </form>
 </div>

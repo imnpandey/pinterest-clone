@@ -41,4 +41,13 @@ $(document).ready(function(){
     isFitWidth: true
     });
   });
+
+    // onclick event handler (for comments)
+    $('.comment_tr').click(function () {
+        $(this).toggleClass('disabled');
+        $(this).parent().parent().find('form.comment').slideToggle(400, function () {
+            $('.main_container').masonry();
+        });
+    });
+
 });
