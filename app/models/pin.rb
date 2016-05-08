@@ -1,4 +1,6 @@
 class Pin < ActiveRecord::Base
+
+  has_many :votes
   belongs_to :user
   has_many :comments
   has_attached_file :image, styles: { thumb: "236x", large: "750x550>"}

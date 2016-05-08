@@ -2,7 +2,7 @@
   <div class="holder">
   <% if user_signed_in? %>
     <div class="actions">
-        <a href="javascript:;" class="button likebutton">Like</a>
+        <%= vote_button(pin) %>
         <a href="javascript:;" class="button comment_tr">Comment</a>
     </div>
   <% end %>
@@ -11,7 +11,7 @@
   <div class="padd">
     <p class="desc"><%= pin.description %></p>
     <p class="info">
-        <span class="LikesCount"><strong>0</strong> likes</span>
+        <span class="LikesCount"><%= pluralize(pin.votes.count, "like") %></span>
         <span class="CommentsCount"><%= pluralize(pin.comments.count, "comment") %></span>
     </p>
   </div>

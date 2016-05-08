@@ -1,6 +1,15 @@
 class User < ActiveRecord::Base
+
+  has_many :votes
   has_many :pins
   has_many :comments
+
+  #Lists all topics the user has voted on
+  has_many :voted_pins, :through => :votes, :source => :pin
+
+  #Lists all votes for the users topics
+  has_many :pin_votes, :through => :pins, :source => :votes
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
@@ -50,6 +59,15 @@ class User < ActiveRecord::Base
       identity.save!
     end
     user
+  end
+
+  def likes? pin, user
+    pin = Vote.where(pin_id: pin.id).where(user_id: user.id)
+    if pin.empty?
+      false
+    else
+      true
+    end
   end
 
   def email_verified?

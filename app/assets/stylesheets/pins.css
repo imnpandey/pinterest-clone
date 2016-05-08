@@ -676,6 +676,7 @@ input:focus {
 
 .pin .actions {
     left: 3px;
+    display: none;
     position: absolute;
     top: 3px;
     z-index: 3;
@@ -683,12 +684,16 @@ input:focus {
 
 .pin .actions a {
     clear: none;
-    display: none;
-    float: left;
-    margin: 0 5px 0 0;
+    position: absolute;
+    margin-left: 55px;
+
 }
 
-.pin:hover .actions a {
+.pin .actions input {
+    border-width: 0px;
+}
+
+.pin:hover .actions{
     display: block;
 }
 
@@ -1277,4 +1282,11 @@ li {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.unlikebutton {
+    background: none repeat scroll 0 0 #F5F2F2;
+    color: #F50404;
+    cursor: default;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.01);
 }
