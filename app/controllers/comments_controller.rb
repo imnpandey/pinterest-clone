@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to pin_path(@pin)
     else
-      render 'new'
+      redirect_to :back, notice: "Enter Something"
     end
   end
 end

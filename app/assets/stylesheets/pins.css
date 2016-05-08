@@ -1022,3 +1022,207 @@ input:focus {
     box-shadow: rgba(255, 255, 255, 0.74902) 0px 0px 2px inset;
     background: rgb(252, 249, 249);
 }
+.profileheader {
+  background: transparent;
+  height: 500px;
+  margin-bottom: -300px;
+  z-index: 101;
+  padding: 10px 0 8px;
+  font-size: 13px;
+  color: #534f4f;
+  overflow: hidden;
+}
+
+.profileheader .header-background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 220px;
+  margin-top: -10px;
+  background: rgba(34, 25, 25, 0.05);
+}
+
+.profileheader .row {
+  margin: 10px auto;
+}
+
+.fixedcontainer {
+  width: 932px;
+  margin: 0 auto;
+}
+
+.profilepanel {
+  float: left;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
+  -moz-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
+}
+
+.profileheader {
+  font-size: 13px;
+  color: #534f4f;
+}
+
+.clearfix::after {
+  clear: both;
+  display: block;
+  height: 0;
+  content: " ";
+  visibility: hidden;
+}
+
+.profileinfo {
+  height: 165px;
+  width: 698px;
+  position: relative;
+}
+
+.profileinfo .profileimage {
+  height: 165px;
+  float: left;
+  max-width: 160px;
+  overflow: hidden;
+}
+
+a {
+  font-weight: bold;
+  color: #221919;
+  text-decoration: none;
+  outline: none;
+}
+
+.profileimage img {
+  height: 100%;
+}
+
+.profileinfo .content {
+  margin-left: 180px;
+  padding-right: 15px;
+}
+
+.profileinfo h1 {
+  color: #534f4f;
+  margin: 15px 0 10px 0;
+  font-size: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.0125em;
+  font-weight: bold;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+.profileinfo p {
+  line-height: 18px;
+}
+
+.colormuted,
+.colormuted a {
+  color: #524d4d;
+}
+
+p {
+  margin: 0 0 .8em;
+  line-height: 1.35em;
+}
+
+.profileinfo .profilelinks {
+  font-weight: 600;
+  color: #8c7e7e;
+  padding-top: 5px;
+  position: absolute;
+  bottom: 18px;
+  overflow: hidden;
+  width: 450px;
+}
+
+.profileinfo .profilelinks li {
+  float: left;
+  margin-right: 8px;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+li {
+  list-style: none;
+}
+
+.colorless,
+.colorless a {
+  color: #8c7e7e;
+}
+
+.profileinfo .icons .icon {
+  float: left;
+  min-width: 15px;
+  height: 15px;
+  background: url(sprite.png) no-repeat;
+}
+
+.profileinfo .icons a.icon:hover {
+  background-position-y: -15px;
+}
+
+.profileinfo .icons .icon.twitter {
+  background-position: -30px 0;
+  width: 20px;
+}
+
+.profileinfo .icons .icon.facebook {
+  background-position: -15px 0;
+}
+
+.profileinfo .icons .icon {
+  float: left;
+  min-width: 15px;
+  height: 15px;
+  background: url(sprite.png) no-repeat;
+}
+
+.profilerepins {
+  width: 224px;
+  float: right;
+  min-height: 165px;
+  overflow: hidden;
+}
+
+.profilepanel h3 {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 12px 10px 7px;
+  color: #534f4f;
+}
+
+.profilerepins img {
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-right: 10px;
+}
+
+.profilerepins strong {
+  line-height: 30px;
+}
+
+.profilerepins a {
+  display: block;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

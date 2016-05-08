@@ -4,7 +4,7 @@
     <!-- <a href="#add_form" id="add_pop">Add +</a> -->
     <%= link_to "Add +", new_pin_path, id: "add_pop" %></li>
     <li id="UserNav">
-        <%= link_to "#", class: "nava" do %>
+        <%= link_to user_path(current_user.id), class: "nava" do %>
             <%= gravatar(current_user) %>
             <%= current_user.username %>
         <% end %>

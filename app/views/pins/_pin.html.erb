@@ -17,10 +17,10 @@
   </div>
   <div class="comment">
     <div class="comment_user">
-     <%= gravatar(pin.user) %>
+     <%= link_to gravatar(pin.user), user_path(pin.user.id) %>
     </div>
     <div class="commentbody">
-      <a href="profile.php?id=4"><b><%=  pin.user.username %></b></a>
+      <b><%= link_to pin.user.username, user_path(pin.user.id) %></b>
       <br><%= link_to(time_ago_in_words(pin.created_at), pin) %> ago
     </div>
   </div>

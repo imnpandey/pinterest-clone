@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   root to: "pins#index"
   resources :pins, only: [:index, :new, :create, :show] do
     resources :comments, only: [:show, :create]
+    # member do
+    #   get 'like', to: "pins#upvote"
+    #   get 'dislike', to: "pins#downvote"
+    # end
   end
+  resources :users, only: [:show]
 end

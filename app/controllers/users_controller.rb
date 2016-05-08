@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+  before_action :user_id, only: [:show]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
+
+  def show
+    @pins = Pin.where(user_id: user_id)
+  end
 
   # PATCH/PUT /users/:id.:format
   def update
@@ -43,13 +48,18 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      accessible = [ :username, :email ] # extend with your own params
-      accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
-      params.require(:user).permit(accessible)
-    end
+  def user_id
+    params[:id]
+  end
+
+  def set_user
+    @user = User.find(user_id)
+  end
+
+  def user_params
+    accessible = [ :username, :email ] # extend with your own params
+    accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
+    params.require(:user).permit(accessible)
+  end
 end
