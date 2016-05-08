@@ -38,12 +38,11 @@ class User < ActiveRecord::Base
       # user to verify it on the next step via UsersController.finish_signup
       email = auth.info.email
       user = User.where(:email => email).first if email
-binding.pry
       # Create the user if it's a new registration
+      binding.pry
       if user.nil?
         user = User.new(
-          # name: auth.extra.raw_info.name,
-          username: auth.info.nickname || auth.uid,
+          name: auth.extra.raw_info.name,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )

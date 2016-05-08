@@ -6,7 +6,7 @@
     <li id="UserNav">
         <%= link_to user_path(current_user.id), class: "nava" do %>
             <%= gravatar(current_user) %>
-            <%= current_user.username %>
+            <%= first_name(current_user) %>
         <% end %>
        <ul>
           <li><a href="#">Invite Friends</a></li>

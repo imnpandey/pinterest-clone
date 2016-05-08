@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def finish_signup
-    if !current_user || !current_user.email.include?('twitter') || !current_user.email.include?('facebook')
+    if !current_user || !current_user.email.include?('twitter')
       redirect_to root_path
     else
       if request.patch? && params[:user] && params[:user][:email]
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    accessible = [ :username, :email ] # extend with your own params
+    accessible = [ :name, :email ] # extend with your own params
     accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
     params.require(:user).permit(accessible)
   end
