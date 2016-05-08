@@ -22,6 +22,147 @@ li {
     list-style: none;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+fieldset, img {
+    border: 0px;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q::before,
+q::after {
+    content: "";
+}
+
+abbr,
+acronym {
+    border: 0px;
+    font-variant: normal;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+    overflow: hidden;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    resize: none;
+    outline: none;
+}
+
+legend {
+    color: rgb(0, 0, 0);
+}
+
+body {
+    font-family: 'helvetica neue', arial, sans-serif;
+    font-size: 10px;
+    color: rgb(33, 25, 34);
+}
+
+table {
+    font-size: inherit;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+    font-family: monospace;
+    line-height: 100%;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h1 {
+    margin: 32px 0px 11px;
+    font-size: 3em;
+}
+
+h2 {
+    padding: 0px 0px 8px;
+    font-size: 2.5em;
+}
+
+h1,
+h2 {
+    letter-spacing: -0.0125em;
+    font-weight: bold;
+}
+
+p {
+    margin: 0px 0px 0.8em;
+    line-height: 1.35em;
+}
+
+textarea,
+input {
+    padding: 5px;
+    line-height: 1em;
+    color: rgb(140, 126, 126);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221) rgb(225, 223, 223) rgb(209, 205, 205);
+    box-shadow: rgba(255, 255, 255, 0.74902) 0px 0px 2px inset;
+    background: rgb(252, 249, 249);
+}
+
+textarea:focus,
+input:focus {
+    box-shadow: rgba(34, 29, 29, 0.0980392) 0px 1px 1px inset;
+    background-color: rgb(255, 255, 255);
+}
+
 #header {
     max-width: 100%;
     background-color: #FAF7F7;
@@ -406,49 +547,48 @@ li {
 }
 
 .RedButton:hover {
-    background-color: #d63e40;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ea5d6e), to(#d63e40), color-stop(0.5, #e3535d), color-stop(0.5, #e04a54));
-    background-image: -moz-linear-gradient(top, #ea5d6e, #e3535d 50%, #e04a54 50%, #d63e40);
-    background-image: -o-linear-gradient(top, #ea5d6e, #e3535d 50%, #e04a54 50%, #d63e40);
-    background-image: -webkit-linear-gradient(top, #ea5d6e, #e3535d 50%, #e04a54 50%, #d63e40);
-    border-color: #ad0303;
-    color: #fff;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ea5d6e', endColorstr='#d63e40');
-    text-shadow: 0 -1px rgba(34, 25, 25, 0.3);
-    box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35), 0 0 10px rgba(235, 82, 82, 0.25);
-    -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35), 0 0 10px rgba(235, 82, 82, 0.25);
-    -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35), 0 0 10px rgba(235, 82, 82, 0.25);
+    box-shadow: 0 1px rgba(255, 255, 255, 0.35) inset, 0 0 0 1px rgba(140, 126, 126, 0.5), 0 1px 2px rgba(35, 24, 24, 0.75);
 }
 
 .RedButton {
-    background-color: #D43638;
-    background-image: -webkit-linear-gradient(center top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
-    background-image: -moz-linear-gradient(center top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
-    background-image: linear-gradient(center top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
-    border-color: #910101;
-    color: #FCF9F9;
-    font-size: 13px;
-    padding: 7px 9px;
-    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
-}
-
-.button {
-    background-color: #F0EDED;
+    background-color: #CB2027;
     background-image: -webkit-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
     background-image: -moz-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
     background-image: linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
     border: 1px solid #BBBBBB;
-    border-radius: 6px 6px 6px 6px;
-    color: #524D4D;
+    border-radius: 4px;
+    color: seashell;
     cursor: pointer;
     display: inline-block;
     float: right;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 19px;
     line-height: 1em;
     margin: 0;
-    padding: 5px 9px;
+    padding: 7px 9px;
     text-align: center;
-    text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -ms-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.button {
+    background-color: #CB2027;
+    background-image: -webkit-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+    background-image: -moz-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+    background-image: linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+    border-radius: 4px;
+    color: seashell;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-weight: 500;
+    line-height: 1em;
+    margin: 0;
+    padding: 7px 9px;
+    text-align: center;
     -webkit-transition: all 0.2s ease-in-out 0s;
     -moz-transition: all 0.2s ease-in-out 0s;
     -ms-transition: all 0.2s ease-in-out 0s;
@@ -462,13 +602,11 @@ li {
 
 .button.disabled,
 .button[disabled] {
-    background: none repeat scroll 0 0 #F2F0F0;
-    border-color: #D1CDCD;
-    color: #D1CDCD;
+    background: none repeat scroll 0 0 #F5F2F2;
+    color: #F50404;
     cursor: default;
     text-shadow: 0 -1px rgba(34, 25, 25, 0.01);
 }
-
 .pin {
     background-color: #FFFFFF;
     box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
@@ -634,7 +772,8 @@ li {
 .bigpin .owner_name {
     font-size: 23px;
     line-height: 1em;
-    margin-bottom: 2px;
+    margin: 5px 0 0;
+    padding-left: 70px;
 }
 
 .bigpin .owner_when {
@@ -642,7 +781,7 @@ li {
     display: block;
     font-size: 13px;
     margin: 5px 0 0;
-    padding-left: 60px;
+    padding-left: 70px;
 }
 
 .bigpin .holder {
@@ -668,8 +807,16 @@ li {
 
 .bigpin .desc {
     border-bottom: 1px solid #D1CDCD;
-    padding-bottom: 10px;
+    padding: 10px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    line-height: 17px;
+    margin: 10px 0 5px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: center;
 }
+
 
 .bigpin .comments {
     overflow: hidden;
@@ -846,7 +993,7 @@ li {
 .inputfile + label strong {
     height: 100%;
     color: #f1e5e6;
-    background-color: #d3394c;
+    background-color: #CB2027;
     display: inline-block;
 }
 

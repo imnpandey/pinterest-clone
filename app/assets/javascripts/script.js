@@ -5,10 +5,12 @@
     var rFilter = /^(image\/jpeg|image\/png)$/i;
     if (! rFilter.test(oFile.type)) {
         $('.error').html('Please select jpg or png').show();
+        $("#disp").slideUp(500);
         return;
     }
     if (oFile.size > 1024 * 1024) {
         $('.error').html('File size too large').show();
+        $("#disp").slideUp(500);
         return;
     }
     $("#disp").slideDown(500);
@@ -64,7 +66,6 @@ $(document).ready(function(){
   });
 
 
-    // onclick event handler (for comments)
     $('.comment_tr').click(function () {
         $(this).toggleClass('disabled');
         $(this).parent().parent().parent().find('form.comment').slideToggle(400, function () {
@@ -80,28 +81,3 @@ $(document).ready(function(){
           $('#file_label>span').text("Choose an image..");
       });
 });
-
-(function ( document, window, index )
-{
-  var inputs = document.querySelectorAll( '.inputfile' );
-  Array.prototype.forEach.call( inputs, function( input )
-  {
-    var label  = input.nextElementSibling,
-      labelVal = label.innerHTML;
-
-    input.addEventListener( 'change', function( e )
-    {
-      alert("change");
-        fileName = e.target.value.split( '\\' ).pop();
-
-      if( fileName )
-        label.querySelector( 'span' ).innerHTML = fileName;
-      else
-        label.innerHTML = labelVal;
-    });
-
-    // Firefox bug fix
-    input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
-    input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
-  });
-}( document, window, 0 ));

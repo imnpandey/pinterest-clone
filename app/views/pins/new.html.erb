@@ -3,6 +3,7 @@
       <a class="close" href="#close">x</a>
       <h2>Upload a Pin</h2>
   </div>
+
   <%= form_for @pin, :url => pins_path, id: "upload_form", :html => { :multipart => true } do |form| %>
     <ul class="ctrl_grp">
       <li class="upload_form">
@@ -19,9 +20,10 @@
           <span class="fff"></span>
         </div>
       </li>
-      <button class="submit_button RedButton" id="sub_post" type="submit">Submit Post</button>
+      <button class="RedButton" id="sub_post" type="submit">Submit Post</button>
       </div>
     </ul>
   <% end %>
+
   <div id="upload_result"></div>
 </div>
