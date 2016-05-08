@@ -2,13 +2,13 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @pin = Pin.find(params[:pin_id])
+    pin = Pin.find(params[:pin_id])
     @comment = Comment.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id
-    @comment.pin_id = @pin.id
+    @comment.pin_id = pin.id
 
     if @comment.save
-      redirect_to pin_path(@pin)
+      redirect_to pin_path(pin)
     else
       redirect_to :back, notice: "Enter Something"
     end

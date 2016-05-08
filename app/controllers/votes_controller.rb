@@ -17,10 +17,4 @@ class VotesController < ApplicationController
 
     redirect_to :back
   end
-
-  private
-
-  def pin
-    @_pin ||= Pin.find(params[:id])
-  end
 end

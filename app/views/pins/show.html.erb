@@ -1,6 +1,7 @@
 <div class="big_container">
   <div class="bigpin">
     <div class="header">
+      <%= vote_button(@pin) %>
       <div class="owner">
         <%= link_to "#", class: "owner_img" do %>
           <%= gravatar(@pin.user) %>
