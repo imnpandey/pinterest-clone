@@ -373,6 +373,58 @@ input:focus {
     transition: all 0.3s ease-in-out 0s;
 }
 
+.upload {
+    position: absolute;
+    background: none repeat scroll 0 0 #FCF9F9;
+    border: 1px solid #F7F5F5;
+    box-shadow: 0 2px 5px rgba(34, 25, 25, 0.5);
+    display: inline-block;
+    left: 25%;
+    padding: 30px 30px 20px;
+    width: 587px;
+    top: 10%;
+}
+
+.upload .header {
+    background-color: #F2F0F0;
+    border-bottom: 1px solid #CCCACA;
+    margin: -30px -31px 20px;
+    padding: 18px 31px 8px;
+    position: relative;
+}
+
+.upload .header h2 {
+    color: #8C7E7E;
+    font-size: 21px;
+    line-height: 1em;
+    margin: 0 37px 0 0;
+    text-shadow: 0 1px #FFFFFF;
+}
+
+.upload .close {
+    background: -webkit-linear-gradient(#FFFCFC, #F0EDED) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#FFFCFC, #F0EDED) repeat scroll 0 0 transparent;
+    background: linear-gradient(#FFFCFC, #F0EDED) repeat scroll 0 0 transparent;
+    border-left: 1px solid rgba(34, 25, 25, 0.15);
+    bottom: 0;
+    box-shadow: 0 1px 2px #FFFFFF inset;
+    color: #BBBBBB;
+    display: block;
+    font-size: 50px;
+    line-height: 42px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 57px;
+    z-index: 1;
+}
+
+.upload form input[type="file"] {
+    font-size: 18px;
+}
+
 .overlay:target+.popup,
 .overlay2:target+.popup,
 .overlay3:target+.popup {
