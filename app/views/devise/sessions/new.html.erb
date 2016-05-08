@@ -1,7 +1,7 @@
 <h1 id="login_logo"><%= link_to("", root_path) %></h1>
   <div class="social_buttons">
     <div class="inset">
-      <%= link_to "#", class: "fb login_button" do %>
+      <%= link_to user_facebook_omniauth_authorize_path, class: "fb login_button" do %>
         <div class="logo_wrapper"><span class="logomin"></span></div>
         <span>Login with Facebook</span>
       <% end %>

@@ -36,10 +36,9 @@ class User < ActiveRecord::Base
       # Get the existing user by email if the provider gives us a verified email.
       # If no verified email was provided we assign a temporary email and ask the
       # user to verify it on the next step via UsersController.finish_signup
-      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
-      email = auth.info.email if email_is_verified
+      email = auth.info.email
       user = User.where(:email => email).first if email
-
+binding.pry
       # Create the user if it's a new registration
       if user.nil?
         user = User.new(

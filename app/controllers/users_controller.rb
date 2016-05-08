@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @pins = Pin.where(user_id: user_id)
   end
 
-  # PATCH/PUT /users/:id.:format
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -20,9 +19,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET/PATCH /users/:id/finish_signup
   def finish_signup
-    unless current_user.email.include?('twitter')
+    if !current_user || !current_user.email.include?('twitter') || !current_user.email.include?('facebook')
       redirect_to root_path
     else
       if request.patch? && params[:user] && params[:user][:email]
@@ -37,9 +35,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/:id.:format
   def destroy
-    # authorize! :delete, @user
     @user.destroy
     respond_to do |format|
       format.html { redirect_to root_url }
