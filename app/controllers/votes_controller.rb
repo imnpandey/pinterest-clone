@@ -10,7 +10,6 @@ class VotesController < ApplicationController
 
   def destroy
     dislike = current_user.votes.where(pin_id: params[:id])
-    authorize! :create, dislike
     dislike.delete_all
 
     redirect_to :back

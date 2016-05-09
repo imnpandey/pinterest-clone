@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: "pins#index"
   resources :pins, only: [:index, :new, :create, :show, :destroy] do
-    resources :comments, only: [:show, :create]
+    resources :comments, only: [:create, :destroy]
     member do
       post 'like', to: "votes#create"
       delete 'like', to: "votes#destroy"

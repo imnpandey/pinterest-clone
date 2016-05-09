@@ -26,7 +26,6 @@ class PinsController < ApplicationController
 
   def destroy
     pin = current_user.pins.find(params[:id])
-    authorize! :destroy, pin
     pin.destroy
 
     redirect_to root_path

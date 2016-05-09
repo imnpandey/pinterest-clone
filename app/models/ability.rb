@@ -13,14 +13,14 @@ class Ability
   private
 
   def cannots
-    cannot [:create, :destroy], [Pin, Pin]
-    cannot [:create, :destroy], [Comment, Comment]
-    cannot [:create, :destroy], [Vote, Vote]
+    cannot [:create], [Pin]
+    cannot [:create], [Comment]
+    cannot [:create], [Vote]
   end
 
   def cans
-    can [:create, :destroy], [Pin, Pin]
-    can [:create, :destroy], [Comment, Comment]
-    can [:create, :destroy], [Vote, Vote]
+    can [:create], [Pin]
+    can [:create], [Comment]
+    can [:create], [Vote]
   end
 end

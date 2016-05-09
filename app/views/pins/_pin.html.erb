@@ -2,9 +2,9 @@
   <div class="holder">
   <% if user_signed_in? %>
     <div class="actions">
-        <%= vote_button(pin) %>
-        <%= delete_button(pin) %>
-        <a href="javascript:;" class="button comment_tr">Comment</a>
+      <div class="inline"><%= vote_button(pin) %></div>
+      <div class="inline"><a href="javascript:;" class="button comment_tr">Comment</a></div>
+      <div class="inline"><%= delete_button(pin) %></div>
     </div>
   <% end %>
     <%= link_to (image_tag pin.image.url(:thumb)), pin, class: "image" %>

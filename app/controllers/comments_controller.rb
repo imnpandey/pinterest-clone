@@ -9,9 +9,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = pin.comments.where(pin_id: params[:id]).where(user_id: current_user.id)
-    authorize! :destroy, comment
-    comment.destroy
+    comment = current_user.comments.where(pin_id: params[:pin_id]).where(id: params[:id])
+    comment.delete_all
 
     redirect_to :back
   end

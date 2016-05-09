@@ -685,12 +685,15 @@ input:focus {
     z-index: 3;
 }
 
-.pin .actions a {
-    clear: none;
-    position: absolute;
-    margin-left: 55px;
-
+.pin .actions .inline {
+    float:left;
+    margin-right: 5px;
 }
+
+.pin .actions .inline-right {
+    float: right;
+}
+
 
 .pin .actions input {
     border-width: 0px;
@@ -1355,7 +1358,5 @@ a.close {
 }
 
 .deletebutton {
-    position: absolute;
-    margin-left: 205px;
     background: none;
 }
