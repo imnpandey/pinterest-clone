@@ -17,6 +17,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
+gem 'cancancan', '~> 1.10'
+
 #image upload
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
