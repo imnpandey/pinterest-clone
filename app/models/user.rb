@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Likeable
 
   has_many :votes
   has_many :pins
@@ -57,15 +58,6 @@ class User < ActiveRecord::Base
       identity.save!
     end
     user
-  end
-
-  def likes? pin, user
-    pin = Vote.where(pin_id: pin.id).where(user_id: user.id)
-    if pin.empty?
-      false
-    else
-      true
-    end
   end
 
   def email_verified?

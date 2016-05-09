@@ -1,8 +1,6 @@
 class VotesController < ApplicationController
   def create
-    like = Vote.new
-    like.user_id = current_user.id
-    like.pin_id = params[:id]
+    like = current_user.votes.build(pin_id: params[:id])
 
     if like.save
       redirect_to :back
@@ -12,7 +10,7 @@ class VotesController < ApplicationController
   end
 
   def destroy
-    dislike = Vote.where(user_id: current_user.id).where(pin_id: params[:id])
+    dislike = current_user.votes.where(pin_id: params[:id])
     dislike.delete_all
 
     redirect_to :back
