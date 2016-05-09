@@ -3,8 +3,12 @@ class CommentsController < ApplicationController
 
   def create
     comment = pin.comments.create(comment_params)
+    authorize! :create, comment
+
     if comment.save
       redirect_to :back
+    else
+      redirect_to :back, notice: "Unable to comment"
     end
   end
 

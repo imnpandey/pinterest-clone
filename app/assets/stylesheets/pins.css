@@ -1290,26 +1290,57 @@ li {
     cursor: default;
     text-shadow: 0 -1px rgba(34, 25, 25, 0.01);
 }
-#flash > .warning {
-  color: #c09853;
-  background-color: #fcf8e3;
-  border-color: #fbeed5;
-}
 
-#flash > .ok {
-  color: #468847;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+.fade.in {
+    opacity: 1;
 }
-
-#flash > .error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
 }
-
-#flash > .info {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+a.close {
+    text-decoration: none !important;
+    font-size: 18px !important;
+    line-height: 1.2;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
 }

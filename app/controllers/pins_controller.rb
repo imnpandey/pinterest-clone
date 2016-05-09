@@ -11,6 +11,7 @@ class PinsController < ApplicationController
 
   def new
     @pin = current_user.pins.build
+    authorize! :create, @pin
   end
 
   def create
@@ -21,11 +22,6 @@ class PinsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:warning] = exception.message
-    redirect_to root_path
   end
 
   private

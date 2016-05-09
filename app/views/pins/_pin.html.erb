@@ -23,6 +23,7 @@
       <b><%= link_to first_name(pin.user), user_path(pin.user.id) %></b>
       <br><%= link_to(time_ago_in_words(pin.created_at), pin) %> ago
     </div>
+
   </div>
   <%= render pin.comments.last(2).reverse %>
   <% if user_signed_in? %>
