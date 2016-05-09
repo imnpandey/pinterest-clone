@@ -15,11 +15,17 @@ class PinsController < ApplicationController
 
   def create
     pin = current_user.pins.build(pin_params)
+    authorize! :create, pin
     if pin.save
       redirect_to root_path
     else
       render 'new'
     end
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:warning] = exception.message
+    redirect_to root_path
   end
 
   private
