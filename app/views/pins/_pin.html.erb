@@ -3,6 +3,7 @@
   <% if user_signed_in? %>
     <div class="actions">
         <%= vote_button(pin) %>
+        <%= delete_button(pin) %>
         <a href="javascript:;" class="button comment_tr">Comment</a>
     </div>
   <% end %>

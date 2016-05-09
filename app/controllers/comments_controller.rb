@@ -4,12 +4,16 @@ class CommentsController < ApplicationController
   def create
     comment = pin.comments.create(comment_params)
     authorize! :create, comment
+    flash[:notice] = "Unable to comment" unless comment.save
+    redirect_to :back
+  end
 
-    if comment.save
-      redirect_to :back
-    else
-      redirect_to :back, notice: "Unable to comment"
-    end
+  def destroy
+    comment = pin.comments.where(pin_id: params[:id]).where(user_id: current_user.id)
+    authorize! :destroy, comment
+    comment.destroy
+
+    redirect_to :back
   end
 
   private
