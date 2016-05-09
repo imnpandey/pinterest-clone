@@ -7,7 +7,9 @@
       <b><%= link_to first_name(comment.user), user_path(comment.user) %></b>
         &nbsp; <%= time_ago_in_words(comment.created_at) %> ago<br>
         <%= comment.content %>
-        <div class="inline"><%= delete_comment_button(comment) %></div>
+        <% if user_signed_in? %>
+          <div class="inline"><%= delete_comment_button(comment) %></div>
+        <% end %>
     </div>
   </div>
 </div>
