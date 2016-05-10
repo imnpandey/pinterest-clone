@@ -1,36 +1,4 @@
-<div id="pfcont">
-  <div class="profileheader">
-    <div class="header-background">&nbsp;</div>
-    <div class="fixedcontainer row clearfix">
-      <div class="profileinfo profilepanel ">
-        <%= gravatar(@user, size: 165) %>
-        <div class="content">
-          <h1><%= @user.name %></h1>
-            <p class="colormuted"></p>
-            <ul class="icons profilelinks">
-              <li class="profilewebsite">
-                  <a href="https://127.0.0.1/pint/navneet" class="icon website colorless" target="_blank"></a>
-              </li>
-            </ul>
-        </div>
-      </div>
-      <div class="profilerepins profilepanel">
-        <!-- <h3></h3> -->
-        <ul>
-            <li>
-              <section class="stats">
-                <%= render 'shared/stats', user: @user  %>
-              </section>
-            </li>
-            <li>
-              <%= relationship_button @user %>
-            </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
+<%= render @user %>
 <div class="main_container" style="position: relative; height: 865px; width: 948px;">
   <%= render @pins %>
 </div>
