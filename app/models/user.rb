@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include Likeable
+  include Followable
 
   has_many :votes
   has_many :pins

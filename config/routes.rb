@@ -11,5 +11,11 @@ Rails.application.routes.draw do
       delete 'like', to: "votes#destroy"
     end
   end
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    member do
+      post 'follow' => 'relationships#create'
+      delete 'follow' => 'relationships#destroy'
+      get :following, :followers
+    end
+  end
 end
