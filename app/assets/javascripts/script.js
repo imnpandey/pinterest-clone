@@ -34,16 +34,35 @@
   }
 
 
-$(document).ready(function(){
-  var $container = $('.main_container');
-  $container.imagesLoaded( function(){
-    $container.masonry({
-    isAnimated: true,
-    itemSelector : '.pin',
-    isAnimated: true,
-    isFitWidth: true
+// $(document).ready(function(){
+//   var $container = $('.main_container');
+//   $container.imagesLoaded( function(){
+//     $container.masonry({
+//     isAnimated: true,
+//     itemSelector : '.pin',
+//     isAnimated: true,
+//     isFitWidth: true
+//     });
+//   });
+
+  function call_masonary(){
+    var $container = $('.main_container');
+    $container.imagesLoaded( function(){
+      $container.masonry({
+      isAnimated: true,
+      itemSelector : '.pin',
+      isAnimated: true,
+      isFitWidth: true
+      });
     });
-  });
+  }
+
+$(document).on('page:load', function() {
+  call_masonary()
+});
+
+$(document).ready(function(){
+ call_masonary();
 
    $('#resetPassword').click(function () {
     $('#login_form').slideUp();
