@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       delete 'like', to: "votes#destroy"
     end
   end
-  resources :users, only: [:show]
+  resources :users, only: [:index, :show]
 end

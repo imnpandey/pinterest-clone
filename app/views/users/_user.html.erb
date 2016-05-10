@@ -3,9 +3,9 @@
     <div class="header-background">&nbsp;</div>
     <div class="fixedcontainer row clearfix">
       <div class="profileinfo profilepanel ">
-        <%= gravatar(@user, size: 165) %>
+        <%= gravatar(user, size: 165) %>
         <div class="content">
-          <h1><%= @user.name %></h1>
+          <h1><%= user.name %></h1>
             <p class="colormuted"></p>
             <ul class="icons profilelinks">
               <li class="profilewebsite">
@@ -17,18 +17,14 @@
       <div class="profilerepins profilepanel">
         <h3>Repins from</h3>
         <ul>
-            <li>
-              <a href="/heather_itzla/?d">
-                  <img src="http://media-cache-ec1.pinterest.com/avatars/heather_itzla-48.jpg" alt="Profile Picture of Heather Itzla">
-                  <strong>Heather Itzla</strong>
-              </a>
-            </li>
+          <li>
+            <a href="/heather_itzla/?d">
+                <img src="http://media-cache-ec1.pinterest.com/avatars/heather_itzla-48.jpg" alt="Profile Picture of Heather Itzla">
+                <strong>Heather Itzla</strong>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
-</div>
-
-<div class="main_container" style="position: relative; height: 865px; width: 948px;">
-  <%= render @pins %>
 </div>

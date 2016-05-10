@@ -685,15 +685,14 @@ input:focus {
     z-index: 3;
 }
 
-.pin .actions .inline {
+.inline {
     float:left;
     margin-right: 5px;
 }
 
-.pin .actions .inline-right {
+.inline-right {
     float: right;
 }
-
 
 .pin .actions input {
     border-width: 0px;

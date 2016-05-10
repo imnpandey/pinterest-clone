@@ -1,12 +1,12 @@
 <div class="pin" pin_id="<%= pin.id %>">
   <div class="holder">
-  <% if user_signed_in? %>
-    <div class="actions">
-      <div class="inline"><%= vote_button(pin) %></div>
-      <div class="inline"><a href="javascript:;" class="button comment_tr">Comment</a></div>
-      <div class="inline"><%= delete_button(pin) %></div>
-    </div>
-  <% end %>
+    <% if user_signed_in? %>
+      <div class="actions">
+        <div class="inline"><%= vote_button(pin) %></div>
+        <div class="inline"><a href="javascript:;" class="button comment_tr">Comment</a></div>
+        <div class="inline-right"><%= delete_button(pin) %></div>
+      </div>
+    <% end %>
     <%= link_to (image_tag pin.image.url(:thumb)), pin, class: "image" %>
   </div>
   <div class="padd">
@@ -24,9 +24,10 @@
       <b><%= link_to first_name(pin.user), user_path(pin.user.id) %></b>
       <br><%= link_to(time_ago_in_words(pin.created_at), pin) %> ago
     </div>
-
   </div>
+
   <%= render pin.comments.last(2).reverse %>
+
   <% if user_signed_in? %>
     <%= form_for([pin, pin.comments.build], html: { class: "comment", style: "display:none" }) do |f| %>
       <%= f.text_area :content, placeholder: "Add a comment.." %>

@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :user_id, only: [:show]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
 
+  def index
+    @users = User.all
+  end
+
   def show
     @pins = Pin.where(user_id: user_id)
   end

@@ -8,7 +8,7 @@
         &nbsp; <%= time_ago_in_words(comment.created_at) %> ago<br>
         <%= comment.content %>
         <% if user_signed_in? %>
-          <div class="inline"><%= delete_comment_button(comment) %></div>
+          <div class="inline-right"><%= delete_comment_button(comment) %></div>
         <% end %>
     </div>
   </div>

@@ -1,6 +1,7 @@
 <div class="big_container">
   <div class="bigpin">
     <div class="header">
+      <%= delete_button(@pin) if user_signed_in? %>
       <%= vote_button(@pin) if user_signed_in? %>
       <div class="owner">
         <%= link_to gravatar(@pin.user), @pin.user, class: "owner_img" %>
