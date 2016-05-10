@@ -4,7 +4,7 @@ class VotesController < ApplicationController
   def create
     like = current_user.votes.build(pin_id: params[:id])
     authorize! :create, like
-    flash[:notice] = "" unless like.save
+    flash[:notice] = "Unable to like" unless like.save
     redirect_to :back
   end
 
