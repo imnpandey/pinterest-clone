@@ -18,6 +18,7 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
 gem 'cancancan', '~> 1.10'
+gem 'will_paginate'
 
 #image upload
 gem 'paperclip', '~> 4.3', '>= 4.3.6'

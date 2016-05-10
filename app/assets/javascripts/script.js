@@ -33,21 +33,9 @@
     oReader.readAsDataURL(oFile);
   }
 
-
-// $(document).ready(function(){
-//   var $container = $('.main_container');
-//   $container.imagesLoaded( function(){
-//     $container.masonry({
-//     isAnimated: true,
-//     itemSelector : '.pin',
-//     isAnimated: true,
-//     isFitWidth: true
-//     });
-//   });
-
   function call_masonary(){
     var $container = $('.main_container');
-    $container.imagesLoaded( function(){
+    $container.imagesLoaded( function() {
       $container.masonry({
       isAnimated: true,
       itemSelector : '.pin',
@@ -99,4 +87,31 @@ $(document).ready(function(){
         else
           $('#file_label>span').text("Choose an image..");
       });
+});
+
+
+
+$(function() {
+  if ($('#infinite-scrolling').size() > 0) {
+    $(window).on('scroll', function() {
+      var more_posts_url;
+      more_posts_url = $('.pagination a[rel=next]').attr('href');
+      if (more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+        $('.pagination').html("");
+        $.ajax({
+          url: more_posts_url,
+          success: function(data) {
+              var $newElems = $( data ).css({ opacity: 0 });;
+              $newElems.imagesLoaded(function(){
+                 $newElems.animate({ opacity: 1 });
+                $(".main_container").append( $newElems ).masonry('appended', $newElems, true );
+              });
+          }
+        });
+      }
+      if (!more_posts_url) {
+        return $('.pagination').html("");
+      }
+    });
+  }
 });
