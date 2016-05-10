@@ -8,11 +8,11 @@
         $("#disp").slideUp(500);
         return;
     }
-    if (oFile.size > 1024 * 1024) {
-        $('.error').html('File size too large').show();
-        $("#disp").slideUp(500);
-        return;
-    }
+    // if (oFile.size > 1024 * 1024) {
+    //     $('.error').html('File size too large').show();
+    //     $("#disp").slideUp(500);
+    //     return;
+    // }
     $("#disp").slideDown(500);
     $(".prev_img img").css("padding", "0px");
     var oImage = document.getElementById('preview');
