@@ -12,6 +12,7 @@
 //
 //= require jquery.min
 //= require turbolinks
+//= require turboboost
 //= require jquery_ujs
 //= require imagesloaded.min
 //= require masonry.min

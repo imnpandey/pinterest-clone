@@ -14,13 +14,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        sign_in(@user == current_user ? @user : current_user, :bypass => true)
-        redirect_to @user, notice: "Your profile was successfully updated."
-      else
-        render 'edit'
-      end
+    if @user.update(user_params)
+      sign_in(@user == current_user ? @user : current_user, :bypass => true)
+      redirect_to @user, notice: "Your profile was successfully updated."
+    else
+      render 'edit'
     end
   end
 

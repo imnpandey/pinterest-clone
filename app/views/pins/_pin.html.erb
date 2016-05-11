@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <div class="actions">
         <div class="inline"><%= vote_button(pin) %></div>
-        <div class="inline"><a href="javascript:;" class="button comment_tr">Comment</a></div>
+        <div class="inline"><a href="javascript:;" class="button comment_tr" data-remote data-turboboost >Comment</a></div>
         <div class="inline-right"><%= delete_button(pin) %></div>
       </div>
     <% end %>
@@ -26,10 +26,11 @@
     </div>
   </div>
 
-  <%= render pin.comments.last(2).reverse %>
+  <%= render last_comments(pin) %>
 
   <% if user_signed_in? %>
-    <%= form_for([pin, pin.comments.build], html: { class: "comment", style: "display:none" }) do |f| %>
+    <%= form_for([pin, pin.comments.build], turboboost: true,
+                               html: { class: "comment", style: "display:none" }) do |f| %>
       <%= f.text_area :content, placeholder: "Add a comment.." %>
       <%= f.submit class: 'button postbutton', value: 'Comment' %>
     <% end %>
