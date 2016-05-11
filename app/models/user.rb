@@ -41,7 +41,6 @@ class User < ActiveRecord::Base
       email = auth.info.email
       user = User.where(:email => email).first if email
       # Create the user if it's a new registration
-      binding.pry
       if user.nil?
         user = User.new(
           name: auth.extra.raw_info.name,
