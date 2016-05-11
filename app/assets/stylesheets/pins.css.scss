@@ -1234,7 +1234,7 @@ li {
   float: left;
   min-width: 15px;
   height: 15px;
-  background: image-url(sprite.png) no-repeat;
+  background: image-url("sprite.png") no-repeat;
 }
 
 .profileinfo .icons a.icon:hover {
@@ -1254,7 +1254,7 @@ li {
   float: left;
   min-width: 15px;
   height: 15px;
-  background: image-url(sprite.png) no-repeat;
+  background: image-url("sprite.png") no-repeat;
 }
 
 .profilerepins {
