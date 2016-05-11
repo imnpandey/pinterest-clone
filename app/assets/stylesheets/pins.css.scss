@@ -185,7 +185,7 @@ input:focus {
 }
 
 .logo {
-    background: url("logo.png") repeat scroll 0 0 transparent;
+    background: image-url("logo.png") repeat scroll 0 0 transparent;
     display: block;
     height: 26px;
     left: 50%;
@@ -227,7 +227,7 @@ input:focus {
 }
 
 .search input[type=submit] {
-    background: url("search.gif") no-repeat scroll center center transparent;
+    background: image-url("search.gif") no-repeat scroll center center transparent;
     border-color: #C2C0C0 #CCCACA #D1CFCF;
     border-style: solid;
     border-width: 1px;
@@ -267,7 +267,7 @@ input:focus {
 }
 
 .nav > li > a span {
-    background: url("down.png") no-repeat scroll center top transparent;
+    background: image-url("down.png") no-repeat scroll center top transparent;
     height: 6px;
     position: absolute;
     right: 14px;
@@ -1234,7 +1234,7 @@ li {
   float: left;
   min-width: 15px;
   height: 15px;
-  background: url(sprite.png) no-repeat;
+  background: image-url(sprite.png) no-repeat;
 }
 
 .profileinfo .icons a.icon:hover {
@@ -1254,7 +1254,7 @@ li {
   float: left;
   min-width: 15px;
   height: 15px;
-  background: url(sprite.png) no-repeat;
+  background: image-url(sprite.png) no-repeat;
 }
 
 .profilerepins {

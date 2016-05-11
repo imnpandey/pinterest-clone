@@ -76,7 +76,7 @@
 .csstransforms3d #DiscoverPage .pin.like .heart div span {
     top: 25px;
     right: 24px;
-    background: url("images/heart.png") 25px 0px no-repeat rgb(255, 255, 255);
+    background: image-url("heart.png") 25px 0px no-repeat rgb(255, 255, 255);
 }
 
 .csstransforms3d #DiscoverPage .pin.like .edge {
@@ -355,14 +355,14 @@
     height: 19px;
     line-height: 1.1;
     margin-right: 30px;
-    background: url("collaborative-icons.png") 0px 0px no-repeat;
+    background: image-url("collaborative-icons.png") 0px 0px no-repeat;
 }
 
 .Form .Right ul li.last-child label span {
     padding-left: 45px;
     height: 19px;
     line-height: 1.1;
-    background: url("collaborative-icons.png") 0px -19px no-repeat;
+    background: image-url("collaborative-icons.png") 0px -19px no-repeat;
 }
 
 .Form .ControlGroups p.owner_message {
@@ -423,7 +423,7 @@
     display: inline-block;
     width: 11px;
     height: 11px;
-    background-image: url("orientation/CheckX.png");
+    background-image: image-url("orientation/CheckX.png");
     background-repeat: no-repeat;
 }
 
@@ -578,7 +578,7 @@
     width: 259px;
     height: 66px;
     margin: 0px auto 50px;
-    background: url("login_icons.png") 0px 0px;
+    background: image-url("login_icons.png") 0px 0px;
 }
 
 .social_buttons {
@@ -674,7 +674,7 @@
     float: left;
     width: 11px;
     height: 20px;
-    background: url("login_icons.png") -258px 0px no-repeat;
+    background: image-url("login_icons.png") -258px 0px no-repeat;
 }
 
 .fb > span {
@@ -728,7 +728,7 @@
     width: 21px;
     height: 17px;
     margin-top: 1px;
-    background: url("login_icons.png") -269px 0px no-repeat;
+    background: image-url("login_icons.png") -269px 0px no-repeat;
 }
 
 .tw > span {
@@ -809,7 +809,7 @@ form.AuthForm li input {
     display: inline-block;
     width: 12px;
     height: 13px;
-    background-image: url("ActionIcons.png");
+    background-image: image-url("ActionIcons.png");
     background-repeat: no-repeat;
 }
 
@@ -845,7 +845,7 @@ form.AuthForm li input {
     height: 33px;
     display: block;
     margin: 0px auto 32px;
-    background: url("logo.png");
+    background: image-url("logo.png");
 }
 
 .VerifyDomainForm > .ControlGroups {
@@ -1037,7 +1037,7 @@ li {
     font-size: 18px;
     text-align: center;
     margin: 0px 0px 30px;
-    background: url("rule_split_589x4.png") 50% 50% no-repeat;
+    background: image-url("rule_split_589x4.png") 50% 50% no-repeat;
 }
 
 .intermission .text {
@@ -1151,7 +1151,7 @@ li {
 }
 
 #SignUp .facebook .logomin {
-    background-image: url("logo_fb_31x42.png");
+    background-image: image-url("logo_fb_31x42.png");
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1170,7 +1170,7 @@ li {
 }
 
 #SignUp .twitter .logomin {
-    background-image: url("logo_twitter_38x32.png");
+    background-image: image-url("logo_twitter_38x32.png");
     background-color: rgba(255, 255, 255, 0.2);
 }
 
