@@ -9,7 +9,6 @@ gem 'turbolinks'
 gem 'turboboost'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sqlite3'
 
 # Authentication gems
 gem 'devise'
@@ -25,6 +24,7 @@ gem 'will_paginate'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 group :development do
+  gem 'sqlite3'
   gem 'quiet_assets'
   gem "better_errors"
   gem 'binding_of_caller'
@@ -42,4 +42,9 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', :require => false
   gem "json-schema"
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
