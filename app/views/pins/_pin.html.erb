@@ -18,21 +18,14 @@
   </div>
   <div class="comment">
     <div class="comment_user">
-     <%= link_to gravatar(pin.user), user_path(pin.user.id) %>
+     <%= link_to gravatar(pin.user), user_path(pin.user) %>
     </div>
     <div class="commentbody">
-      <b><%= link_to first_name(pin.user), user_path(pin.user.id) %></b>
+      <b><%= link_to first_name(pin.user), user_path(pin.user) %></b>
       <br><%= link_to(time_ago_in_words(pin.created_at), pin) %> ago
     </div>
   </div>
 
   <%= render last_comments(pin) %>
-
-  <% if user_signed_in? %>
-    <%= form_for([pin, pin.comments.build], turboboost: true,
-                               html: { class: "comment", style: "display:none" }) do |f| %>
-      <%= f.text_area :content, placeholder: "Add a comment.." %>
-      <%= f.submit class: 'button postbutton', value: 'Comment' %>
-    <% end %>
-  <% end %>
+  <%= render "comments/small_comments", pin: pin if user_signed_in? %>
 </div>

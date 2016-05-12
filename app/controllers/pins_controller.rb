@@ -2,7 +2,8 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @pins = Pin.paginate(page: params[:page], per_page: 10)
+    @pins = Pin.includes(:comments, :votes, :user)
+            .paginate(page: params[:page], per_page: 10)
     if request.xhr?
       render partial: @pins
     end

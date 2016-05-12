@@ -1,0 +1,5 @@
+    <%= form_for([pin, pin.comments.build], turboboost: true,
+                               html: { class: "comment", style: "display:none" }) do |f| %>
+      <%= f.text_area :content, placeholder: "Add a comment.." %>
+      <%= f.submit class: 'button postbutton', value: 'Comment' %>
+    <% end %>
