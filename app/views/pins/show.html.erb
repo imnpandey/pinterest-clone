@@ -1,25 +1,23 @@
 <div class="big_container">
   <div class="bigpin">
     <div class="header">
-      <%= delete_button(@pin) if user_signed_in? %>
-      <%= vote_button(@pin) if user_signed_in? %>
+      <%= delete_button(pin) if user_signed_in? %>
+      <%= vote_button(pin) if user_signed_in? %>
       <div class="owner">
-        <%= link_to gravatar(@pin.user), @pin.user, class: "owner_img" %>
+        <%= link_to gravatar(pin.user), pin.user, class: "owner_img" %>
         <p class="owner_name">
-          <%= link_to @pin.user.name, @pin.user %>
+          <%= link_to pin.user.name, pin.user %>
         </p>
         <p class="owner_when">
-          <%= link_to(time_ago_in_words(@pin.created_at), @pin) %>
+          <%= link_to(time_ago_in_words(pin.created_at), pin) %>
         </p>
       </div>
     </div>
     <div class="holder">
-        <%= image_tag @pin.image.url(:large), class: "image" %>
+        <%= image_tag pin.image.url(:large), class: "image" %>
     </div>
-    <p class="desc"><%= @pin.description %></p>
-    <%= render @pin.comments %>
-    <% if user_signed_in? %>
-      <%= render "comments/form" %>
-    <% end %>
+    <p class="desc"><%= pin.description %></p>
+    <%= render comments(pin) %>
+    <%= render "comments/form" if user_signed_in? %>
   </div>
 </div>

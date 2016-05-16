@@ -2,7 +2,7 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @pins = Pin.includes(:comments, :votes, :user)
+    @pins = Pin.includes(:user).recent
             .paginate(page: params[:page], per_page: 10)
     if request.xhr?
       render partial: @pins
@@ -10,7 +10,8 @@ class PinsController < ApplicationController
   end
 
   def show
-    @pin = Pin.find(params[:id])
+    @pin = Pin.includes(:user).where(id: id)
+               .references(:users)
   end
 
   def new
@@ -29,13 +30,17 @@ class PinsController < ApplicationController
   end
 
   def destroy
-    pin = current_user.pins.find(params[:id])
+    pin = current_user.pins.find(id)
     pin.destroy
 
     redirect_to root_path
   end
 
   private
+
+  def id
+    params[:id]
+  end
 
   def pin_params
     params.require(:pin).permit(:description, :image)

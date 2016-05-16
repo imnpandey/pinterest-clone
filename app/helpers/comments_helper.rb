@@ -9,6 +9,10 @@ module CommentsHelper
   end
 
   def last_comments(pin)
-    pin.comments.last(2).reverse
+    pin.comments.includes(:user).last(2).reverse
+  end
+
+  def comments(pin)
+    pin.comments.includes(:user)
   end
 end

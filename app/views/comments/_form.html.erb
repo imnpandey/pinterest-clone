@@ -4,7 +4,7 @@
      <%= gravatar(current_user) %>
     </div>
     <div class="commentbody">
-      <%= form_for([@pin, @pin.comments.build], html: { class: "comment"},
+      <%= form_for([pin, pin.comments.build], html: { class: "comment"},
                 turboboost: true) do |f| %>
         <%= f.text_area :content, placeholder: "Add a comment.." %>
         <%= f.submit class: 'button postbutton', value: 'Comment' %>

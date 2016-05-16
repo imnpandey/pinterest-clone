@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @pins = Pin.where(user_id: user_id).paginate(page: params[:page], per_page: 10)
+    @pins = Pin.includes(:user).where(user_id: user_id)
+               .paginate(page: params[:page], per_page: 10)
+               .references(:users)
     if request.xhr?
       render partial: @pins
     end
